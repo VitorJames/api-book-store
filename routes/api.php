@@ -32,6 +32,7 @@ Route::group(['prefix' => 'user','middleware' => ['apiJWT']], function ($router)
 
 Route::group(['prefix' => 'books','middleware' => ['apiJWT']], function ($router) {
     Route::get('/', [BookController::class, 'index']);
+    Route::get('/{book}', [BookController::class, 'show']);
     Route::post('/', [BookController::class, 'store']);
     Route::put('/{book}', [BookController::class, 'update']);
     Route::delete('/{book}', [BookController::class, 'destroy']);
